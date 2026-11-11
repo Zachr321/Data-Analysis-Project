@@ -25,7 +25,7 @@ LABELS = ["toxic", "severe_toxic", "obscene", "threat", "insult", "identity_hate
 LEXICON = {
     "fuck", "fucking", "fucker", "motherfucker", "shit", "bitch", "cunt", "dick",
     "cock", "asshole", "bastard", "faggot", "whore", "slut", "pussy", "retard",
-    "idiot", "stupid", "nigger",
+    "idiot", "stupid", "nigger",""
 }
 # English guard for the edit-distance step: 100k most common words, MINUS anything that
 # contains a swear stem. wordfreq is built from web/social text, so it also lists slang

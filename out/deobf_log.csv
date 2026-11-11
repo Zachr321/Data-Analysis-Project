@@ -1,0 +1,338 @@
+original,new,rule,count
+shoit,shoit shit_guess,edit_distance,36
+shyt,shyt shit_guess,edit_distance,29
+asswhole,asswhole asshole_guess,edit_distance,26
+fagget,fagget faggot_guess,edit_distance,23
+fagot,fagot faggot_guess,edit_distance,21
+bicth,bicth bitch_guess,edit_distance,19
+shgit,shgit shit_guess,edit_distance,18
+shiot,shiot shit_guess,edit_distance,18
+shti,shti shit_guess,edit_distance,18
+fuking,fuking fucking_guess,edit_distance,17
+fcuk,fcuk fuck_guess,edit_distance,15
+faggit,faggit faggot_guess,edit_distance,15
+biatch,biatch bitch_guess,edit_distance,14
+idoit,idoit idiot_guess,edit_distance,10
+basterd,basterd bastard_guess,edit_distance,9
+fcuking,fcuking fucking_guess,edit_distance,8
+ashole,ashole asshole_guess,edit_distance,7
+cnut,cnut cunt_guess,edit_distance,6
+whome,whome whore_guess,edit_distance,6
+fvck,fvck fuck_guess,edit_distance,6
+fukcing,fukcing fucking_guess,edit_distance,5
+idot,idot idiot_guess,edit_distance,5
+retared,retared retard_guess,edit_distance,5
+seit,seit shit_guess,edit_distance,5
+cung,cung cunt_guess,edit_distance,5
+biotch,biotch bitch_guess,edit_distance,5
+fucc,fucc fuck_guess,edit_distance,4
+biitch,biitch bitch_guess,edit_distance,4
+fukk,fukk fuck_guess,edit_distance,4
+fuk1ng,fuk1ng fucking_guess,edit_distance,4
+sout,sout slut_guess,edit_distance,4
+dikkkkk,dikk dick_guess,edit_distance,4
+whoe,whoe whore_guess,edit_distance,3
+fukker,fukker fucker_guess,edit_distance,3
+facking,facking fucking_guess,edit_distance,3
+wpore,wpore whore_guess,edit_distance,3
+fucing,fucing fucking_guess,edit_distance,3
+chck,chck cock_guess,edit_distance,3
+soit,soit shit_guess,edit_distance,3
+snit,snit shit_guess,edit_distance,3
+scut,scut slut_guess,edit_distance,3
+bit3h,bit3h bitch_guess,edit_distance,3
+fukking,fukking fucking_guess,edit_distance,2
+niggr,niggr nigger_guess,edit_distance,2
+fuuck,fuuck fuck_guess,edit_distance,2
+f@gget,f@gget faggot_guess,edit_distance,2
+fluck,fluck fuck_guess,edit_distance,2
+stupis,stupis stupid_guess,edit_distance,2
+fvcking,fvcking fucking_guess,edit_distance,2
+cpnt,cpnt cunt_guess,edit_distance,2
+diick,diick dick_guess,edit_distance,2
+ideot,ideot idiot_guess,edit_distance,2
+fuker,fuker fucker_guess,edit_distance,2
+shlt,shlt shit_guess,edit_distance,2
+fuch,fuch fuck_guess,edit_distance,2
+fcker,fcker fucker_guess,edit_distance,2
+bith,bith bitch_guess,edit_distance,2
+bytch,bytch bitch_guess,edit_distance,2
+cudnt,cudnt cunt_guess,edit_distance,2
+dico,dico dick_guess,edit_distance,2
+motherfucked,motherfucked motherfucker_guess,edit_distance,2
+fsck,fsck fuck_guess,edit_distance,2
+itiot,itiot idiot_guess,edit_distance,2
+cack,cack cock_guess,edit_distance,2
+svit,svit shit_guess,edit_distance,2
+dihck,dihck dick_guess,edit_distance,2
+stuid,stuid stupid_guess,edit_distance,2
+focking,focking fucking_guess,edit_distance,2
+motherfuker,motherfuker motherfucker_guess,edit_distance,2
+sutpid,sutpid stupid_guess,edit_distance,2
+f@cking,f@cking fucking_guess,edit_distance,2
+niggur,niggur nigger_guess,edit_distance,2
+fwck,fwck fuck_guess,edit_distance,2
+cvnt,cvnt cunt_guess,edit_distance,2
+stupied,stupied stupid_guess,edit_distance,2
+motherfucken,motherfucken motherfucker_guess,edit_distance,2
+niggar,niggar nigger_guess,edit_distance,2
+fuucker,fuucker fucker_guess,edit_distance,2
+conk,conk cock_guess,edit_distance,2
+fukkk,fukk fuck_guess,edit_distance,1
+n!gg@r,n!gg@r nigger_guess,edit_distance,1
+fuca,fuca fuck_guess,edit_distance,1
+bltch,bltch bitch_guess,edit_distance,1
+bitsch,bitsch bitch_guess,edit_distance,1
+funcking,funcking fucking_guess,edit_distance,1
+assehole,assehole asshole_guess,edit_distance,1
+bitcch,bitcch bitch_guess,edit_distance,1
+ceck,ceck cock_guess,edit_distance,1
+refard,refard retard_guess,edit_distance,1
+whhore,whhore whore_guess,edit_distance,1
+batard,batard bastard_guess,edit_distance,1
+faggggggggggggit,faggit faggot_guess,edit_distance,1
+fukkkk,fukk fuck_guess,edit_distance,1
+asshols,asshols asshole_guess,edit_distance,1
+bitsh,bitsh bitch_guess,edit_distance,1
+fuak,fuak fuck_guess,edit_distance,1
+fucck,fucck fuck_guess,edit_distance,1
+fyuck,fyuck fuck_guess,edit_distance,1
+b-i-o-t-c-h,b-i-o-t-c-h bitch_guess,edit_distance,1
+bastarrd,bastarrd bastard_guess,edit_distance,1
+motehrfucker,motehrfucker motherfucker_guess,edit_distance,1
+baitch,baitch bitch_guess,edit_distance,1
+assole,assole asshole_guess,edit_distance,1
+coxk,coxk cock_guess,edit_distance,1
+fuxk,fuxk fuck_guess,edit_distance,1
+basturd,basturd bastard_guess,edit_distance,1
+returd,returd retard_guess,edit_distance,1
+b1tsch,b1tsch bitch_guess,edit_distance,1
+bitcz,bitcz bitch_guess,edit_distance,1
+b.i.t.i.ch,b.i.t.i.ch bitch_guess,edit_distance,1
+fu@k,fu@k fuck_guess,edit_distance,1
+c$nt,c$nt cunt_guess,edit_distance,1
+foggot,foggot faggot_guess,edit_distance,1
+fag0t,fag0t faggot_guess,edit_distance,1
+iddiot,iddiot idiot_guess,edit_distance,1
+bi!ch,bi!ch bitch_guess,edit_distance,1
+f$uck,f$uck fuck_guess,edit_distance,1
+idio,idio idiot_guess,edit_distance,1
+whoore,whoore whore_guess,edit_distance,1
+c@ck,c@ck cock_guess,edit_distance,1
+pssy,pssy pussy_guess,edit_distance,1
+motherfcuker,motherfcuker motherfucker_guess,edit_distance,1
+reṯard,reṯard retard_guess,edit_distance,1
+f@uck,f@uck fuck_guess,edit_distance,1
+reatard,reatard retard_guess,edit_distance,1
+faeggot,faeggot faggot_guess,edit_distance,1
+fuycker,fuycker fucker_guess,edit_distance,1
+so.it,so.it shit_guess,edit_distance,1
+bsatard,bsatard bastard_guess,edit_distance,1
+retart,retart retard_guess,edit_distance,1
+cuna,cuna cunt_guess,edit_distance,1
+fuhk,fuhk fuck_guess,edit_distance,1
+bastrd,bastrd bastard_guess,edit_distance,1
+assholr,assholr asshole_guess,edit_distance,1
+mothersucker,mothersucker motherfucker_guess,edit_distance,1
+f@ck!ng,f@ck!ng fucking_guess,edit_distance,1
+focker,focker fucker_guess,edit_distance,1
+bitсh,bitсh bitch_guess,edit_distance,1
+fuycking,fuycking fucking_guess,edit_distance,1
+motherucker,motherucker motherfucker_guess,edit_distance,1
+bithc,bithc bitch_guess,edit_distance,1
+shiit,shiit shit_guess,edit_distance,1
+fwcking,fwcking fucking_guess,edit_distance,1
+shït,shït shit_guess,edit_distance,1
+ideiot,ideiot idiot_guess,edit_distance,1
+studid,studid stupid_guess,edit_distance,1
+shijt,shijt shit_guess,edit_distance,1
+stuipd,stuipd stupid_guess,edit_distance,1
+assholoe,assholoe asshole_guess,edit_distance,1
+fujk,fujk fuck_guess,edit_distance,1
+stipid,stipid stupid_guess,edit_distance,1
+dikkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk,dikk dick_guess,edit_distance,1
+stupip,stupip stupid_guess,edit_distance,1
+stut,stut slut_guess,edit_distance,1
+stupig,stupig stupid_guess,edit_distance,1
+motherfucke,motherfucke motherfucker_guess,edit_distance,1
+nigge,nigge nigger_guess,edit_distance,1
+bastatrd,bastatrd bastard_guess,edit_distance,1
+pusy,pusy pussy_guess,edit_distance,1
+shiu,shiu shit_guess,edit_distance,1
+stupic,stupic stupid_guess,edit_distance,1
+bitckh,bitckh bitch_guess,edit_distance,1
+cünt,cünt cunt_guess,edit_distance,1
+biach,biach bitch_guess,edit_distance,1
+cunnt,cunnt cunt_guess,edit_distance,1
+fucjer,fucjer fucker_guess,edit_distance,1
+fudck,fudck fuck_guess,edit_distance,1
+didck,didck dick_guess,edit_distance,1
+asswole,asswole asshole_guess,edit_distance,1
+nogger,nogger nigger_guess,edit_distance,1
+di3k,di3k dick_guess,edit_distance,1
+funker,funker fucker_guess,edit_distance,1
+pussey,pussey pussy_guess,edit_distance,1
+fukc,fukc fuck_guess,edit_distance,1
+bastaerd,bastaerd bastard_guess,edit_distance,1
+5h1t,shit,leet,88
+f@ggot,faggot,leet,44
+n!gger,nigger,leet,12
+sh!t,shit,leet,9
+phuck,fuck,leet,8
+b1tch,bitch,leet,8
+d!ck,dick,leet,6
+a$$hole,asshole,leet,4
+fuck!ng,fucking,leet,4
+sh1t,shit,leet,3
+phaggot,faggot,leet,3
+$hit,shit,leet,3
+fagg0t,faggot,leet,3
+b!tch,bitch,leet,3
+c0ck,cock,leet,2
+phucking,fucking,leet,2
+d1ck,dick,leet,2
+n!!!gger,nigger,leet,1
+wh0re,whore,leet,1
+as5h0le,asshole,leet,1
+$h1t,shit,leet,1
+b@stard,bastard,leet,1
+pu$$y,pussy,leet,1
+1d10t,idiot,leet,1
+@$$hole,asshole,leet,1
+f@gg0t,faggot,leet,1
+f4gg0t,faggot,leet,1
+fu.ck,fuck,repeat/separator,14
+f.u.c.k,fuck,repeat/separator,4
+s-h-i-t,shit,repeat/separator,3
+f-u-c-k-i-n-g,fucking,repeat/separator,2
+shiiiit,shit,repeat/separator,2
+fuckkkkkkkkkk,fuck,repeat/separator,2
+shittttttttt,shit,repeat/separator,2
+b.i.t.c.h,bitch,repeat/separator,2
+f.a.g.g.o.t,faggot,repeat/separator,2
+cu_nt,cunt,repeat/separator,2
+fu_ck,fuck,repeat/separator,2
+fagggot,faggot,repeat/separator,2
+s.h.i.t,shit,repeat/separator,1
+shiiiiiiiiiiit,shit,repeat/separator,1
+f-u-c-k,fuck,repeat/separator,1
+fffffffffffffffuuuuuuuuuuuuuuuuuuuuuuuccccccccccccckkkkkkkkkkkkkkkkkkk,fuck,repeat/separator,1
+shittttttttttttttttttttttttttttt,shit,repeat/separator,1
+fucccccckkkkk,fuck,repeat/separator,1
+fuuuuuuuuuuck,fuck,repeat/separator,1
+fuuuuuuck,fuck,repeat/separator,1
+ffffffffuuuuuuuuuuuucccccccccccccckkkkkkkkkkkkkkkk,fuck,repeat/separator,1
+fuckkkkkkkkkkkkkk,fuck,repeat/separator,1
+faggotttttttt,faggot,repeat/separator,1
+s.l.u.t,slut,repeat/separator,1
+w.h.o.r.e,whore,repeat/separator,1
+idioooot,idiot,repeat/separator,1
+bbbbbastard,bastard,repeat/separator,1
+fuckkk,fuck,repeat/separator,1
+fuuuuuuuuuuuuuucccccckkkkkkkkkkkkkkeeeeeeeeeeeer,fucker,repeat/separator,1
+i.d.io.t,idiot,repeat/separator,1
+f.u.c.k.i.n.g,fucking,repeat/separator,1
+i-d-i-o-t,idiot,repeat/separator,1
+faggotttttttttttt,faggot,repeat/separator,1
+di_ck,dick,repeat/separator,1
+fuuucccker,fucker,repeat/separator,1
+stupppppppppid,stupid,repeat/separator,1
+shiiiiiiiit,shit,repeat/separator,1
+st.u.p.id,stupid,repeat/separator,1
+fu.c.k.i.n.g,fucking,repeat/separator,1
+cockkkkkk,cock,repeat/separator,1
+shitttt,shit,repeat/separator,1
+shiiiiiiiiiiiit,shit,repeat/separator,1
+co-ck,cock,repeat/separator,1
+i.d.i.o.t,idiot,repeat/separator,1
+sh.it,shit,repeat/separator,1
+shiiiiitttt,shit,repeat/separator,1
+bitchhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh,bitch,repeat/separator,1
+stupidddd,stupid,repeat/separator,1
+bitchhhhhhhhhhhhhhhhhhhhhhhhhhhhh,bitch,repeat/separator,1
+fffffffffffffffffffffffuuuuuuuuuuuuuuuuuuuuuuuuuucccccccccccccccccccccccccccccccccccckkkkkkkkkkkkkkkkkkkkkkkkkkkk,fuck,repeat/separator,1
+fuckkkkkkk,fuck,repeat/separator,1
+f*ck,fuck,wildcard,100
+f***,fuck,wildcard,66
+f***ing,fucking,wildcard,59
+f*cking,fucking,wildcard,56
+f**k,fuck,wildcard,43
+sh*t,shit,wildcard,34
+f**king,fucking,wildcard,28
+a**hole,asshole,wildcard,23
+fu*k,fuck,wildcard,20
+*uck,fuck,wildcard,11
+b*tch,bitch,wildcard,8
+b****,bitch,wildcard,7
+d***,dick,wildcard,7
+fu*ker,fucker,wildcard,6
+f******,fucking,wildcard,6
+**it,shit,wildcard,6
+sh**,shit,wildcard,5
+f*cker,fucker,wildcard,5
+****ing,fucking,wildcard,5
+fuc*ing,fucking,wildcard,5
+f*****g,fucking,wildcard,5
+b**ch,bitch,wildcard,5
+b******,bastard,wildcard,5
+fu**,fuck,wildcard,4
+c**t,cunt,wildcard,4
+f****ng,fucking,wildcard,4
+b***h,bitch,wildcard,3
+s*****,stupid,wildcard,3
+assh*le,asshole,wildcard,3
+c*nt,cunt,wildcard,3
+f***er,fucker,wildcard,3
+c*ck,cock,wildcard,3
+di*k,dick,wildcard,3
+motherf*cker,motherfucker,wildcard,3
+sh#t,shit,wildcard,2
+mother****er,motherfucker,wildcard,2
+f*%#,fuck,wildcard,2
+sh%t,shit,wildcard,2
+n****r,nigger,wildcard,2
+s*it,shit,wildcard,2
+d*ck,dick,wildcard,2
+a******,asshole,wildcard,2
+p*ssy,pussy,wildcard,2
+fu**ing,fucking,wildcard,2
+d**k,dick,wildcard,2
+i****,idiot,wildcard,1
+as**ole,asshole,wildcard,1
+moth*rfucker,motherfucker,wildcard,1
+f#cking,fucking,wildcard,1
+f%ck,fuck,wildcard,1
+f%%k,fuck,wildcard,1
+f**k**g,fucking,wildcard,1
+nig*er,nigger,wildcard,1
+bi*ch,bitch,wildcard,1
+fu*king,fucking,wildcard,1
+wh*re,whore,wildcard,1
+b*stard,bastard,wildcard,1
+shi*,shit,wildcard,1
+*ucking,fucking,wildcard,1
+b#tch,bitch,wildcard,1
+id*ot,idiot,wildcard,1
+n**ger,nigger,wildcard,1
+b**tard,bastard,wildcard,1
+wh*r*,whore,wildcard,1
+f*ck*ng,fucking,wildcard,1
+f****r,fucker,wildcard,1
+fuc*,fuck,wildcard,1
+re***d,retard,wildcard,1
+motherf**ker,motherfucker,wildcard,1
+****ole,asshole,wildcard,1
+as*hole,asshole,wildcard,1
+fagg*t,faggot,wildcard,1
+ba*tard,bastard,wildcard,1
+*****le,asshole,wildcard,1
+r*t*rd,retard,wildcard,1
+a**h**e,asshole,wildcard,1
+fa*got,faggot,wildcard,1
+pu***,pussy,wildcard,1
+a*****e,asshole,wildcard,1
+f#ck,fuck,wildcard,1
+f**ker,fucker,wildcard,1
+fuc**ng,fucking,wildcard,1
+n*gg*r,nigger,wildcard,1
+f%#k,fuck,wildcard,1
