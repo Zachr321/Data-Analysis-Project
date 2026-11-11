@@ -6,7 +6,7 @@ Two outputs per comment:
   text_bert  : light pipeline, for an uncased BERT
 
 Run:
-  python preprocess.py --data data/ --out out/
+  python preprocess.py --out out/
 """
 import argparse
 import re
@@ -185,21 +185,33 @@ def build_tfidf(train_text, max_features: int = 200_000):
     return word, char
 
 
+def input_csv(data_dir: Path, filename: str) -> Path:
+    """Find a dataset CSV stored flat or in the repository's same-name folder."""
+    candidates = (data_dir / filename, data_dir / filename / filename)
+    for path in candidates:
+        if path.is_file():
+            return path
+    expected = " or ".join(str(path) for path in candidates)
+    raise FileNotFoundError(f"Could not find {filename}; expected {expected}")
+
+
 # ---------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--data", default="data")
+    ap.add_argument("--data", default=".")
     ap.add_argument("--out", default="out")
     a = ap.parse_args()
     data, out = Path(a.data), Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
 
-    train = pd.read_csv(data / "train.csv")
+    train = pd.read_csv(input_csv(data, "train.csv"))
     n0 = len(train)
     train = dedupe(train)
     print(f"train: {n0} rows -> {len(train)} after dedupe")
 
-    test = pd.read_csv(data / "test.csv").merge(pd.read_csv(data / "test_labels.csv"), on="id")
+    test = pd.read_csv(input_csv(data, "test.csv")).merge(
+        pd.read_csv(input_csv(data, "test_labels.csv")), on="id"
+    )
     test = test[test.toxic != -1].reset_index(drop=True)      # -1 = not scored
     print(f"test: {len(test)} labeled rows")
 

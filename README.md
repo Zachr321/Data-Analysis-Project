@@ -14,12 +14,35 @@ cd Data-Analysis-Project
 ### 2. Install dependencies
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 ### 3. Run the notebook
 
 Open `Notebook.ipynb` in Jupyter or VS Code and **Run All** cells.
+
+### Run the Python scripts
+
+Select the Python 3.13 interpreter in VS Code, then install the dependencies with:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Run the preprocessing and TF-IDF pipeline from the repository root:
+
+```bash
+python preprocess.py
+python train_tfidf.py --data out --preds preds
+```
+
+To train the optional BERT model instead:
+
+```bash
+python train_bert.py --data out --preds preds
+```
+
+The BERT model downloads its weights on first use and is much faster with a supported GPU.
 
 ## Project Structure
 
