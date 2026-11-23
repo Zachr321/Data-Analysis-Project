@@ -17,3 +17,11 @@ Notebook_executed.ipynb
 # OS
 .DS_Store
 Thumbs.db
+__pycache__/
+out_new/
+preds_default/
+preds_tuned/
+slang/
+*.log
+ldnoobw_en.txt
+build_notebook.py

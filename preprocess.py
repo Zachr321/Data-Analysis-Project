@@ -25,7 +25,7 @@ LABELS = ["toxic", "severe_toxic", "obscene", "threat", "insult", "identity_hate
 LEXICON = {
     "fuck", "fucking", "fucker", "motherfucker", "shit", "bitch", "cunt", "dick",
     "cock", "asshole", "bastard", "faggot", "whore", "slut", "pussy", "retard",
-    "idiot", "stupid", "nigger",""
+    "idiot", "stupid", "nigger",
 }
 # English guard for the edit-distance step: 100k most common words, MINUS anything that
 # contains a swear stem. wordfreq is built from web/social text, so it also lists slang
@@ -39,6 +39,10 @@ LEET = str.maketrans({"1": "i", "!": "i", "0": "o", "3": "e", "4": "a",
 MASK_CHARS = "*#%"                           # each one = exactly one unknown letter
 CHAT = {"u": "you", "ur": "your", "r": "are", "urself": "yourself", "ure": "you're"}
 MAX_TOKEN_REPEATS = 5                        # spam cap: keep at most 5 copies of a token per comment
+# standalone numbers (no letters): 2005, 24/7, 3.5, 100%  -> "numtoken" in the TF-IDF branch.
+# One shared token keeps the weak "has a number" signal (20% of clean vs 10% of toxic comments)
+# and removes ~7k useless number columns. Words with letters (sh1t, 2nd, mp3) are untouched.
+RE_NUM = re.compile(r"[\d.,:/%\-]*\d[\d.,:/%\-]*")
 
 # ---------------------------------------------------------------- step 1: wikipedia noise
 RE_TIME = re.compile(r"\d{1,2}:\d{2},? \d{1,2} \w+ \d{4} \(utc\)", re.I)
@@ -72,37 +76,41 @@ def deobfuscate(tok: str) -> tuple[str, str]:
         return tok, ""
     base = _collapse(tok, 2)                  # text rule for everything: goooood -> good
 
-    # a) separators, only f.u.c.k style (every piece 1-2 chars); re-add, u.s. stay untouched
-    t = tok
-    parts = re.split(r"[.\-_]", t)
-    if len(parts) > 1 and all(0 < len(p) <= 2 for p in parts):
-        t = "".join(parts)
+    # a) separators: always TRY the joined version (f.u.c.k, f.uck, b.itch); it is only
+    #    kept if a rule below turns it into a lexicon word, so re-add / u.s stay untouched
+    variants = [tok]
+    joined = re.sub(r"[.\-_]", "", tok)
+    if joined and joined != tok:
+        variants.append(joined)
 
-    # b) repeated letters: try 2 (asssshole -> asshole) and 1 (fuckkk -> fuck)
-    t2 = _collapse(t, 2)
-    for cand in (t2, _collapse(t, 1)):
-        if cand in LEXICON:
-            return cand, "repeat/separator"
+    for t in variants:
+        # b) repeated letters: try 2 (asssshole -> asshole) and 1 (fuckkk -> fuck)
+        t2 = _collapse(t, 2)
+        for cand in (t2, _collapse(t, 1)):
+            if cand in LEXICON:
+                return cand, "repeat/separator"
 
-    # c) wildcard: * # % = one unknown letter; replace only if exactly one lexicon word fits
-    if any(c in t2 for c in MASK_CHARS):
-        pat = re.compile("^" + "".join("[a-z]" if c in MASK_CHARS else re.escape(c) for c in t2) + "$")
-        hits = [w for w in LEXICON if pat.match(w)]
-        if len(hits) == 1:
-            return hits[0], "wildcard"
+        # c) wildcard: * # % = one unknown letter; replace only if exactly one lexicon word fits
+        if any(c in t2 for c in MASK_CHARS):
+            pat = re.compile("^" + "".join("[a-z]" if c in MASK_CHARS else re.escape(c) for c in t2) + "$")
+            hits = [w for w in LEXICON if pat.match(w)]
+            if len(hits) == 1:
+                return hits[0], "wildcard"
 
-    # d) leet + sound-alike (ph -> f)
-    t3 = t2.translate(LEET).replace("ph", "f")
-    for cand in (t3, _collapse(t3, 1)):
-        if cand in LEXICON:
-            return cand, "leet"
+        # d) leet + sound-alike (ph -> f)
+        t3 = t2.translate(LEET).replace("ph", "f")
+        for cand in (t3, _collapse(t3, 1)):
+            if cand in LEXICON:
+                return cand, "leet"
 
+    # e) edit distance on the original token (no separator join: stay conservative)
+    t3 = _collapse(tok, 2).translate(LEET).replace("ph", "f")
     # inflected forms that already contain the whole word (dicks, fucked, idiots) are real
     # words, not disguises: leave them alone (word + char n-grams already link them)
     if any(t3.startswith(w) for w in LEXICON):
         return base, ""
 
-    # e) edit distance = 1, same first letter, >= 4 letters, not an English word -> add a guess
+    # edit distance = 1, same first letter, >= 4 letters, not an English word -> add a guess
     if len(t3) >= 4 and t3.isalpha() and t3 not in ENGLISH and base not in ENGLISH:
         best = min(LEXICON, key=lambda w: OSA.distance(t3, w))
         if OSA.distance(t3, best) == 1 and t3[0] == best[0]:
@@ -140,7 +148,8 @@ def cap_repeats(toks: list[str], k: int = MAX_TOKEN_REPEATS) -> list[str]:
 
 
 def clean(text: str, mode: str = "tfidf", log: list | None = None) -> str:
-    """mode='tfidf': full pipeline. mode='bert': noise + deobfuscation + spam cap only."""
+    """mode='tfidf': full pipeline. mode='bert': noise + deobfuscation + spam cap only
+    (BERT keeps numbers as written)."""
     t = replace_noise(text)                                  # 1 noise tokens
     t = t.lower()                                            # 2 lowercase
     toks = tokenize(t)
@@ -152,6 +161,8 @@ def clean(text: str, mode: str = "tfidf", log: list | None = None) -> str:
         if rule and log is not None:
             log.append((w, new, rule))
         out.extend(new.split())
+    if mode == "tfidf":
+        out = ["numtoken" if RE_NUM.fullmatch(w) else w for w in out]   # 4b numbers
     out = cap_repeats(out)                                   # 5 spam cap
     return " ".join(out)
 

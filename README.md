@@ -36,13 +36,34 @@ python preprocess.py
 python train_tfidf.py --data out --preds preds
 ```
 
+To pick the regularization strength `C` per label on the validation fold first (saved to `preds/best_c.json` and reused for the test run):
+
+```bash
+python train_tfidf.py --data out --preds preds --tune-c
+```
+
 To train the optional BERT model instead:
 
 ```bash
 python train_bert.py --data out --preds preds
+python train_bert.py --data out --preds preds --pos-weight --tag bert_pw   # rare labels (threat) weighted more
 ```
 
 The BERT model downloads its weights on first use and is much faster with a supported GPU.
+
+Evaluate: ROC-AUC per label (no cut-off needed), plus precision / recall / F1 / BCR on test with a cut-off per label chosen on the validation fold:
+
+```bash
+python evaluate.py --pred preds/tfidf_lr_test.csv preds/bert_test.csv --truth out/test_clean.csv \
+                   --val-pred preds/tfidf_lr_val.csv preds/bert_val.csv --val-truth out/train_clean.csv
+```
+
+Extras:
+
+```bash
+python tsne_bert.py --model preds/bert_best --data out --out tsne_bert.png      # t-SNE of BERT sentence vectors
+python slang_fasttext.py --data out --profanity ldnoobw_en.txt --out slang     # fastText slang detection test
+```
 
 ## Project Structure
 

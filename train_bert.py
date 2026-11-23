@@ -9,11 +9,18 @@ Usage (Colab):
   python train_bert.py --data out --preds preds                        # full run
   python train_bert.py --data out --preds preds --subset 20000         # quick run on 20k comments
   python train_bert.py --model distilbert-base-uncased --max-len 192   # faster model
+  python train_bert.py --data out --preds preds --pos-weight --tag bert_pw   # rare labels weighted more
 
-Writes to preds/:
+Writes to preds/ (file names start with --tag, default "bert"):
   bert_val.csv    predictions on the validation fold (best epoch)
   bert_test.csv   predictions on the labeled test set (best epoch)
   bert_best/      the best model + tokenizer
+
+--pos-weight: binary cross-entropy where a positive example of label j counts w_j times,
+w_j = (#negatives / #positives) of that label in the training split, capped at --pos-weight-cap.
+Rare labels (threat ~0.3%) then push the model as hard as common ones during training.
+Pick cut-offs AFTER training (evaluate.py --val-pred ...), since the weighted model's
+probabilities are shifted upwards.
 """
 import argparse
 import time
@@ -74,6 +81,9 @@ def main():
     ap.add_argument("--val-fold", type=int, default=0)
     ap.add_argument("--subset", type=int, default=0, help="train on a random subset of N comments (0 = all)")
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--pos-weight", action="store_true", help="weight positives per label (see top of file)")
+    ap.add_argument("--pos-weight-cap", type=float, default=50.0)
+    ap.add_argument("--tag", default="bert", help="prefix for output files, e.g. bert_pw")
     a = ap.parse_args()
 
     torch.manual_seed(a.seed)
@@ -105,6 +115,14 @@ def main():
     opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=0.01)
     steps = len(loader) * a.epochs
     sched = get_linear_schedule_with_warmup(opt, int(0.1 * steps), steps)
+
+    pos_weight = None
+    if a.pos_weight:
+        share = tr[LABELS].values.mean(axis=0)
+        pos_weight = torch.tensor(np.clip((1 - share) / share, 1.0, a.pos_weight_cap),
+                                  dtype=torch.float, device=device)
+        print("pos_weight:", {c: round(float(w), 1) for c, w in zip(LABELS, pos_weight.cpu())})
+    loss_fn = torch.nn.BCEWithLogitsLoss(pos_weight=pos_weight)
     scaler = torch.amp.GradScaler(enabled=amp)
 
     # ---- train
@@ -114,8 +132,10 @@ def main():
         t0, run_loss = time.time(), 0.0
         for i, enc in enumerate(loader, 1):
             enc = {k: v.to(device) for k, v in enc.items()}
+            labels = enc.pop("labels")
             with torch.autocast(device.type, enabled=amp):
-                loss = model(**enc).loss          # BCEWithLogits over the 6 labels
+                logits = model(**enc).logits
+            loss = loss_fn(logits.float(), labels)    # (weighted) BCE over the 6 labels
             opt.zero_grad()
             scaler.scale(loss).backward()
             scaler.unscale_(opt)
@@ -134,16 +154,16 @@ def main():
         score = table.loc["all", "mean"]
         if score > best:
             best = score
-            model.save_pretrained(preds / "bert_best")
-            tok.save_pretrained(preds / "bert_best")
-            to_frame(va.id, p_va).to_csv(preds / "bert_val.csv", index=False)
+            model.save_pretrained(preds / f"{a.tag}_best")
+            tok.save_pretrained(preds / f"{a.tag}_best")
+            to_frame(va.id, p_va).to_csv(preds / f"{a.tag}_val.csv", index=False)
             print(f"ep {ep}: new best val mean AUC {best:.4f}, saved")
 
     # ---- test with the best model
-    model = AutoModelForSequenceClassification.from_pretrained(preds / "bert_best").to(device)
+    model = AutoModelForSequenceClassification.from_pretrained(preds / f"{a.tag}_best").to(device)
     p_te = predict(model, test.text_bert.tolist(), tok, a.max_len, a.batch, device, amp)
-    to_frame(test.id, p_te).to_csv(preds / "bert_test.csv", index=False)
-    print("wrote", preds / "bert_test.csv")
+    to_frame(test.id, p_te).to_csv(preds / f"{a.tag}_test.csv", index=False)
+    print("wrote", preds / f"{a.tag}_test.csv")
 
 
 if __name__ == "__main__":
