@@ -1,0 +1,38 @@
+{
+ "toxic": {
+  "tfidf_lr": 0.1,
+  "tfidf_nbsvm": 0.1,
+  "bert": 0.5,
+  "bert_pw": 0.3
+ },
+ "severe_toxic": {
+  "tfidf_lr": 0.1,
+  "tfidf_nbsvm": 0.0,
+  "bert": 0.9,
+  "bert_pw": 0.0
+ },
+ "obscene": {
+  "tfidf_lr": 0.1,
+  "tfidf_nbsvm": 0.0,
+  "bert": 0.7,
+  "bert_pw": 0.2
+ },
+ "threat": {
+  "tfidf_lr": 0.7,
+  "tfidf_nbsvm": 0.2,
+  "bert": 0.1,
+  "bert_pw": 0.0
+ },
+ "insult": {
+  "tfidf_lr": 0.0,
+  "tfidf_nbsvm": 0.1,
+  "bert": 0.7,
+  "bert_pw": 0.2
+ },
+ "identity_hate": {
+  "tfidf_lr": 0.1,
+  "tfidf_nbsvm": 0.0,
+  "bert": 0.2,
+  "bert_pw": 0.7
+ }
+}

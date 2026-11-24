@@ -58,6 +58,12 @@ python evaluate.py --pred preds/tfidf_lr_test.csv preds/bert_test.csv --truth ou
                    --val-pred preds/tfidf_lr_val.csv preds/bert_val.csv --val-truth out/train_clean.csv
 ```
 
+Ensemble (needs the four model outputs above: tfidf_lr, tfidf_nbsvm, bert, bert_pw). Rank-averages the models with per-label weights and cut-offs chosen on the validation fold, then prints test AUC / precision / recall / F1 / BCR:
+
+```bash
+python ensemble.py --preds preds --data out
+```
+
 Extras:
 
 ```bash
