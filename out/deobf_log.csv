@@ -97,7 +97,6 @@ bitsh,bitsh bitch_guess,edit_distance,1
 fuak,fuak fuck_guess,edit_distance,1
 fucck,fucck fuck_guess,edit_distance,1
 fyuck,fyuck fuck_guess,edit_distance,1
-b-i-o-t-c-h,b-i-o-t-c-h bitch_guess,edit_distance,1
 bastarrd,bastarrd bastard_guess,edit_distance,1
 motehrfucker,motehrfucker motherfucker_guess,edit_distance,1
 baitch,baitch bitch_guess,edit_distance,1
@@ -108,7 +107,6 @@ basturd,basturd bastard_guess,edit_distance,1
 returd,returd retard_guess,edit_distance,1
 b1tsch,b1tsch bitch_guess,edit_distance,1
 bitcz,bitcz bitch_guess,edit_distance,1
-b.i.t.i.ch,b.i.t.i.ch bitch_guess,edit_distance,1
 fu@k,fu@k fuck_guess,edit_distance,1
 c$nt,c$nt cunt_guess,edit_distance,1
 foggot,foggot faggot_guess,edit_distance,1
@@ -126,7 +124,6 @@ f@uck,f@uck fuck_guess,edit_distance,1
 reatard,reatard retard_guess,edit_distance,1
 faeggot,faeggot faggot_guess,edit_distance,1
 fuycker,fuycker fucker_guess,edit_distance,1
-so.it,so.it shit_guess,edit_distance,1
 bsatard,bsatard bastard_guess,edit_distance,1
 retart,retart retard_guess,edit_distance,1
 cuna,cuna cunt_guess,edit_distance,1
@@ -201,22 +198,38 @@ pu$$y,pussy,leet,1
 @$$hole,asshole,leet,1
 f@gg0t,faggot,leet,1
 f4gg0t,faggot,leet,1
+f-ucking,fucking,repeat/separator,216
+f-uck,fuck,repeat/separator,25
 fu.ck,fuck,repeat/separator,14
+idiot-,idiot,repeat/separator,9
+ass-hole,asshole,repeat/separator,7
+fuc.ker,fucker,repeat/separator,6
+mother-fucker,motherfucker,repeat/separator,4
 f.u.c.k,fuck,repeat/separator,4
 s-h-i-t,shit,repeat/separator,3
+f.ucking,fucking,repeat/separator,3
 f-u-c-k-i-n-g,fucking,repeat/separator,2
 shiiiit,shit,repeat/separator,2
+retard-,retard,repeat/separator,2
 fuckkkkkkkkkk,fuck,repeat/separator,2
 shittttttttt,shit,repeat/separator,2
 b.i.t.c.h,bitch,repeat/separator,2
+....stupid,stupid,repeat/separator,2
 f.a.g.g.o.t,faggot,repeat/separator,2
 cu_nt,cunt,repeat/separator,2
 fu_ck,fuck,repeat/separator,2
 fagggot,faggot,repeat/separator,2
+f.uck,fuck,repeat/separator,2
+c-unt,cunt,repeat/separator,2
+-dick,dick,repeat/separator,1
 s.h.i.t,shit,repeat/separator,1
+faggot.-,faggot,repeat/separator,1
 shiiiiiiiiiiit,shit,repeat/separator,1
+b-itch,bitch,repeat/separator,1
+-bitch,bitch,repeat/separator,1
 f-u-c-k,fuck,repeat/separator,1
 fffffffffffffffuuuuuuuuuuuuuuuuuuuuuuuccccccccccccckkkkkkkkkkkkkkkkkkk,fuck,repeat/separator,1
+s.hit,shit,repeat/separator,1
 shittttttttttttttttttttttttttttt,shit,repeat/separator,1
 fucccccckkkkk,fuck,repeat/separator,1
 fuuuuuuuuuuck,fuck,repeat/separator,1
@@ -233,14 +246,26 @@ fuuuuuuuuuuuuuucccccckkkkkkkkkkkkkkeeeeeeeeeeeer,fucker,repeat/separator,1
 i.d.io.t,idiot,repeat/separator,1
 f.u.c.k.i.n.g,fucking,repeat/separator,1
 i-d-i-o-t,idiot,repeat/separator,1
+cunt.-,cunt,repeat/separator,1
 faggotttttttttttt,faggot,repeat/separator,1
+c.ock,cock,repeat/separator,1
 di_ck,dick,repeat/separator,1
 fuuucccker,fucker,repeat/separator,1
+c-ock,cock,repeat/separator,1
+fa-ggot,faggot,repeat/separator,1
 stupppppppppid,stupid,repeat/separator,1
 shiiiiiiiit,shit,repeat/separator,1
+id.iot,idiot,repeat/separator,1
+idi.o.t,idiot,repeat/separator,1
 st.u.p.id,stupid,repeat/separator,1
 fu.c.k.i.n.g,fucking,repeat/separator,1
 cockkkkkk,cock,repeat/separator,1
+fa.ggot,faggot,repeat/separator,1
+c.unt,cunt,repeat/separator,1
+ass.hole,asshole,repeat/separator,1
+bi.tch,bitch,repeat/separator,1
+wh.ore,whore,repeat/separator,1
+b-i-tch,bitch,repeat/separator,1
 shitttt,shit,repeat/separator,1
 shiiiiiiiiiiiit,shit,repeat/separator,1
 co-ck,cock,repeat/separator,1
@@ -248,10 +273,13 @@ i.d.i.o.t,idiot,repeat/separator,1
 sh.it,shit,repeat/separator,1
 shiiiiitttt,shit,repeat/separator,1
 bitchhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh,bitch,repeat/separator,1
+pussy-,pussy,repeat/separator,1
 stupidddd,stupid,repeat/separator,1
 bitchhhhhhhhhhhhhhhhhhhhhhhhhhhhh,bitch,repeat/separator,1
+-fuck,fuck,repeat/separator,1
 fffffffffffffffffffffffuuuuuuuuuuuuuuuuuuuuuuuuuucccccccccccccccccccccccccccccccccccckkkkkkkkkkkkkkkkkkkkkkkkkkkk,fuck,repeat/separator,1
 fuckkkkkkk,fuck,repeat/separator,1
+f.uck-,fuck,repeat/separator,1
 f*ck,fuck,wildcard,100
 f***,fuck,wildcard,66
 f***ing,fucking,wildcard,59
