@@ -1,0 +1,11 @@
+BERT runs on Kaggle (Nov 25), GPU T4, 6699.8s total. New preprocessing (158770 train / 63978 test; deobf 572/214/376/612)
+train 127,016  val 31,754 (fold 0)  test 63,978
+bert (lr 2e-5, 2 epochs, batch 32, max_len 256)
+ ep1 loss 0.0722  val AUC mean 0.9879 | toxic .9872 sev .9910 obs .9941 thr .9773 ins .9901 idh .9874
+   no_lexicon_word (27819) 0.9741 ; negated (177) 0.9204
+ ep2 loss 0.0316  val AUC mean 0.9887 | toxic .9879 sev .9928 obs .9947 thr .9779 ins .9905 idh .9885  (best, saved)
+   no_lexicon_word 0.9741 (tox .9783 sev .9976 obs .9871 thr .9230 ins .9881 idh .9702) ; negated 0.9216 (tox .9340 obs .9362 ins .8946)
+bert_pw (pos_weight: toxic 9.4, severe 50, obscene 17.9, threat 50, insult 19.2, identity_hate 50)
+ ep1 val AUC mean 0.9879 | toxic .9865 sev .9917 obs .9936 thr .9780 ins .9894 idh .9884 ; no_lex 0.9738 ; negated 0.9181
+ ep2 val AUC mean 0.9891 | toxic .9878 sev .9926 obs .9942 thr .9804 ins .9900 idh .9898  (best, saved)
+   no_lexicon_word 0.9779 (tox .9780 sev .9982 obs .9861 thr .9350 ins .9884 idh .9818) ; negated 0.9197 (tox .9261 obs .9383 ins .8948)

@@ -60,8 +60,8 @@ def main():
     preds, data, results = Path(a.preds), Path(a.data), Path(a.results)
     results.mkdir(exist_ok=True)
 
-    val_ids = pd.read_csv(preds / "bert_val.csv").id
-    test_ids = pd.read_csv(preds / "bert_test.csv").id
+    val_ids = pd.read_csv(preds / f"{MODELS[2]}_val.csv").id
+    test_ids = pd.read_csv(preds / f"{MODELS[2]}_test.csv").id
     yv = pd.read_csv(data / "train_clean.csv", usecols=["id", *LABELS]).set_index("id").loc[val_ids]
     yt = pd.read_csv(data / "test_clean.csv", usecols=["id", *LABELS]).set_index("id").loc[test_ids]
     pv, pt = load(preds, "val", val_ids), load(preds, "test", test_ids)

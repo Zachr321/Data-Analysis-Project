@@ -1,8 +1,8 @@
 {
- "toxic": 0.902,
- "severe_toxic": 0.9877,
- "obscene": 0.9442,
- "threat": 0.9956,
+ "toxic": 0.8973,
+ "severe_toxic": 0.9856,
+ "obscene": 0.9437,
+ "threat": 0.9955,
  "insult": 0.9446,
- "identity_hate": 0.9892
+ "identity_hate": 0.9895
 }

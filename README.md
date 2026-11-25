@@ -51,6 +51,10 @@ python train_bert.py --data out --preds preds --pos-weight --tag bert_pw   # rar
 
 The BERT model downloads its weights on first use and is much faster with a supported GPU.
 
+The saved BERT predictions (`preds/bert_*.csv`, `preds/bert_pw_*.csv`) come from Kaggle T4 runs on the final preprocessing (Nov 25); the training log with per-epoch validation AUC is in `results/bert_training_log.txt`.
+
+Note: `out/train_clean.csv` and `out/test_clean.csv` are stored with Git LFS. Always run `python preprocess.py` first (about 2 minutes) so they match the current `preprocess.py`.
+
 Evaluate: ROC-AUC per label (no cut-off needed), plus precision / recall / F1 / BCR on test with a cut-off per label chosen on the validation fold:
 
 ```bash
@@ -67,7 +71,7 @@ python ensemble.py --preds preds --data out
 Extras:
 
 ```bash
-python tsne_bert.py --model preds/bert_best --data out --out tsne_bert.png      # t-SNE of BERT sentence vectors
+python tsne_bert.py --model preds/bert_best --data out --out results/tsne_bert.png      # t-SNE of BERT sentence vectors
 python slang_fasttext.py --data out --profanity ldnoobw_en.txt --out slang     # fastText slang detection test
 ```
 
